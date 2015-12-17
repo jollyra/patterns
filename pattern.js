@@ -1,9 +1,5 @@
 (function () {
 	var pattern = {
-		w: 800,
-		h: 800,
-		pixelScale: 1,
-
 		build: function build() {
 			var canvas = $("<canvas width='" + this.w + "' height='" + this.h + "'" + "class='" + "pattern'>" + "</canvas>");
 			this.ctx = canvas.get(0).getContext("2d");
