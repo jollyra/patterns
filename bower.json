@@ -1,0 +1,25 @@
+{
+  "name": "patterns",
+  "homepage": "https://github.com/jollyra/patterns",
+  "authors": [
+    "Nigel Rahkola <Nigel.Rahkola@enernoc.com>"
+  ],
+  "description": "Algorithmic patterns on a HTML5 canvas",
+  "main": "pattern.js",
+  "moduleType": [],
+  "keywords": [
+    "canvas",
+    "html5"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
