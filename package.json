@@ -1,0 +1,23 @@
+{
+  "name": "patterns",
+  "version": "0.0.1",
+  "description": "Algorithmic patterns on HTML5 canvas",
+  "main": "patterns.js",
+  "dependencies": {
+    "jquery": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jollyra/patterns.git"
+  },
+  "author": "Nigel Rahkola <me@nigelrahkola.com> (https://github.com/jollyra)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jollyra/patterns/issues"
+  },
+  "homepage": "https://github.com/jollyra/patterns"
+}
