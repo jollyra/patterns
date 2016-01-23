@@ -5,7 +5,9 @@
 		colourA: "#FFFFFF",
 		colourB: "#000000",
 		render: function render() {
-			this.initTiles(this.viewWidth / this.pixelScale);
+			this.tiles = Object.create(T);
+			this.size = this.viewWidth / this.pixelScale;
+			this.tiles.zeros(this.size * this.size);
 			this.writePattern();
 			this.attachCanvas();
 			this.draw();
@@ -20,17 +22,10 @@
 			var ps = this.pixelScale;
 			this.ctx.fillRect(x * ps, y * ps, ps, ps);
 		},
-		initTiles: function initTiles(size) {
-			this.size = size;
-			this.stick = []
-			for(var i = 0; i < size * size; i++) {
-				this.stick.push(0);
-			}
-		},
 		draw: function () {
 			for(var y = 0; y < this.size; y++) {
 				for(var x = 0; x < this.size; x++) {
-					var val = this.getTile(x,y);
+					var val = this.tiles.getTile(x,y);
 					var colour;
 					if (val === 1) {
 						colour = this.colourA;
@@ -40,14 +35,6 @@
 					this.fillPixel(x, y, colour);
 				}
 			}
-		},
-		getTile: function getTile(x, y) {
-			var tileIdx = y * this.size + x;
-			return this.stick[tileIdx];
-		},
-		setTile: function getTile(x, y, val) {
-			var tileIdx = y * this.size + x;
-			return this.stick[tileIdx] = val;
 		}
 	};
 
@@ -59,9 +46,9 @@
 				var y = j * this.size/100;
 				var c = Math.trunc(x*x + y*y);
 				if (c % 2 === 0) {
-					this.setTile(j, i, 1);
+					this.tiles.setTile(j, i, 1);
 				} else {
-					this.setTile(j, i, 0);
+					this.tiles.setTile(j, i, 0);
 				}
 			}
 		}
